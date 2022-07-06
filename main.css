@@ -1,0 +1,17 @@
+body{
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+p{
+    padding: 15px 30px;
+}
+
+.Escopo{
+    align-items: center;
+    margin: auto;
+    display: grid;
+    grid-template-columns:  25% 25% 25% 25%;
+}
