@@ -3,7 +3,16 @@ const resposta = document.getElementById('resultado');
 var valores = [], operacao = [];
 
 function addnumero(event) {
-    let bt = event.target;
+    let bt = event.target, text = event.target.textContent;
+        
+    if (text.indexOf('.') == -1) {
+       if (bt.textContent == ','){
+        resposta.textContent += '.';
+        } 
+    }else{
+        throw 'erro';
+    }
+        
     resposta.textContent += bt.textContent;
 }
 
@@ -33,7 +42,7 @@ function oparadores(event){
 }
 
 function result() {
-    let res;
+    let res = 0;
 
     console.log(valores);
     console.log(operacao);
@@ -45,37 +54,34 @@ function result() {
         if (operacao[i] == '-') {
 
             console.log('-');
-            res += valores[i].parseFloat - parseFloat(valores[++i]);
+            res = Number(valores[i]) - (valores[++i]);
 
         }else if (operacao[i] == '+') {  
             
-            console.log(valores[i] +' + '+ valores[++i]);
-            res += Number(valores[i]) + Number(valores[++i]); 
+            console.log(valores[i] +' + '+ valores[i+1]);
+            res = Number(valores[i]) + Number(valores[++i]); 
 
         }else if (operacao[i] == '/') {
 
             console.log('/');
-            res = parseFloat(valores[i]) / parseFloat(valores[++i]);
+            res = Number(valores[i]) / Number(valores[++i]);
 
         }else if (operacao[i] == '*') {
 
             console.log('*');
-            res += parseFloat(valores[i]) * parseFloat(valores[++i]);
+            res = Number(valores[i]) * Number(valores[++i]);
 
         };    
         console.log(res);
     }
 
-    for (let i = 0; i < operacao.length; i++) {
+    while(operacao.length > 0) {
         operacao.shift();
-    
     }
-
-    for (let i = 0; i < valores.length; i++) {
+    while(valores.length > 0) {
         valores.shift();
-    
-    } 
-
+    }
+   
     console.log(valores);
     console.log(operacao);
 
@@ -85,22 +91,23 @@ function result() {
 }
 
 function removerTudo() {
-    for (let i = 0; i < operacao.length; i++) {
+    while(operacao.length > 0) {
         operacao.shift();
-    
     }
-
-    for (let i = 0; i < valores.length; i++) {
+    while(valores.length > 0) {
         valores.shift();
-    
-    } 
+    }  
 
     console.log(valores);
     console.log(operacao);
 
-limpar();
+    limpar();
 }
 
 function limpar() {
     resposta.textContent = '';
+}
+
+function trocarSinal() {
+    resposta.textContent = Number(resposta.textContent) * -1;
 }
