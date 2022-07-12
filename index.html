@@ -10,27 +10,25 @@
 </head>
 <body>
     <div id="div_result">
-        <p id="resultado">
-            
-        </p>
+        <p id="resultado"></p>
     </div>
 
     <div class="Escopo">
-        <p class="Numeros">%</p>
+        <p class="operadores">%</p>
 
-        <p class="Numeros">CE</p>
+        <p class="operadores" onclick="removerTudo()">CE</p>
 
-        <p class="Numeros">C</p>
+        <p class="operadores" onclick="limpar()">C</p>
 
-        <p class="Numeros" onclick="da(event)">&lt;=</p>
+        <p class="operadores" onclick="removerElemento()">&lt;=</p>
 
-        <p class="Numeros">1/X</p>
+        <p class="operadores">1/X</p>
 
-        <p class="Numeros" >X^2</p>
+        <p class="operadores" >X^2</p>
 
-        <p class="Numeros">2^√x</p>
+        <p class="operadores">2^√x</p>
 
-        <p class="Numeros" >/</p>
+        <p class="operadores" onclick="addnumero(event)">/</p>
 
         <p class="Numeros" onclick="addnumero(event)">7</p>
 
@@ -38,7 +36,7 @@
 
         <p class="Numeros" onclick="addnumero(event)">9</p>
       
-        <p class="Numeros">X</p>
+        <p class="operadores" onclick="oparadores(event)">*</p>
 
         <p class="Numeros" onclick="addnumero(event)">4</p>
 
@@ -46,7 +44,7 @@
 
         <p class="Numeros" onclick="addnumero(event)">6</p>
 
-        <p class="Numeros">-</p>
+        <p class="operadores" onclick="oparadores(event)">-</p>
 
         <p class="Numeros" onclick="addnumero(event)">1</p>
 
@@ -54,7 +52,7 @@
 
         <p class="Numeros" onclick="addnumero(event)">3</p>
 
-        <p class="Numeros">+</p>
+        <p class="operadores" onclick="oparadores(event)">+</p>
 
         <p class="Numeros">+/-</p>
 
@@ -62,7 +60,7 @@
 
         <p class="Numeros">,</p>
 
-        <p class="Numeros">=</p>
+        <p class="operadores" onclick="result()">=</p>
     </div>
 
     <script src='main.js'></script>    

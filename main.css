@@ -1,12 +1,28 @@
 body{
+    border-radius: 20px;
     display: flex;
-
     flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+#div_result{
+    background-color: rgb(196, 196, 196);
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 400px;
+    height: 60px;
+    justify-content: center;
+    margin: 20px; 
+}
 
+#resultado{
+   text-align: center;
 }
 
 p{
-    padding: 15px 30px;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;;
 }
 
 .Escopo{
@@ -14,4 +30,18 @@ p{
     margin: auto;
     display: grid;
     grid-template-columns:  25% 25% 25% 25%;
+}
+
+.Numeros{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(195, 193, 193);
+}
+
+.operadores{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(154, 154, 154);
 }
